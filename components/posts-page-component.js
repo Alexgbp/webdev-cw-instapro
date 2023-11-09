@@ -7,6 +7,7 @@ import { setLike, removeLike, getPosts } from "../api.js";
 
 export function renderPostsPageComponent({ appEl }) {
 
+  console.log(posts);
   const appPosts = posts.map((post) => {
     return {
       userImageUrl: post.user.imageUrl,
@@ -53,7 +54,7 @@ export function renderPostsPageComponent({ appEl }) {
           </li >                  
         </ul >
       </div > `
-  });
+  }).join("");
 
   appEl.innerHTML = postsHtml;
 
