@@ -69,6 +69,7 @@ export function renderPostsPageComponent({ appEl }) {
     });
   }
 
+  
   const likeEventListener = () => {
     const likeButtons = document.querySelectorAll(".like-button");
 
