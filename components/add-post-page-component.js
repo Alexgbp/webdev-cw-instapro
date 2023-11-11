@@ -1,5 +1,6 @@
 import { renderHeaderComponent } from "./header-component.js";
 import { renderUploadImageComponent } from "./upload-image-component.js";
+import { sanHtml } from "./sanitizeHtml.js";
 
 export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
   let imageUrl = "";
@@ -45,12 +46,11 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
       });
     }
 
-
     document.getElementById("add-button").addEventListener("click", () => {
-      const description = document.getElementById("description").value;
+      const description = document.getElementById("description");
 
       onAddPostClick({
-        description: description,
+        description: sanHtml(description.value),
         imageUrl: imageUrl,
       });
     });
